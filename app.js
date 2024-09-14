@@ -27,7 +27,7 @@ const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4");
 
 let futureDate = new Date( 2024, 10, 24, 11, 30, 0 );
-console.log(futureDate);
+// console.log(futureDate);
 
 // get full date 
 const year = futureDate.getFullYear();
@@ -49,7 +49,7 @@ const futureTime = futureDate.getTime();
 function getRemainingTime(){
   const today = new Date().getTime();
   const t = futureTime - today;
-  console.log(t);
+  // console.log(t);
 
   // 1sec = 1000ms
   // 1min = 60sec
@@ -84,5 +84,8 @@ function getRemainingTime(){
   });
 
 }
+
+// countdown
+let countdown = setInterval(getRemainingTime,1000);
 
 getRemainingTime();
