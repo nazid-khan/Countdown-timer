@@ -69,6 +69,20 @@ function getRemainingTime(){
   let minutes = Math.floor( (t % oneHour) / oneMinute);
   let seconds = Math.floor( (t % oneMinute) / 1000 );
 
+  // set value array
+  const values = [days,hours,minutes,seconds];
+
+  function format(item){
+    if(item < 10){
+      return `0${item}`;
+    }
+    return item
+  }
+
+  items.forEach(function(item,index){
+    item.innerHTML = format(values[index]);
+  });
+
 }
 
 getRemainingTime();
